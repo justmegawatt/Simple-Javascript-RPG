@@ -1,0 +1,120 @@
+<!doctype html>
+
+<html>
+    <head>
+        <title>Simple Javascript Game</title>
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <style type="text/css">
+            /* *~*~*~*~*~*~*~*~*~*
+            Main HTML Elements
+            *~*~*~*~*~*~*~*~*~* */
+
+            body {
+                margin: 0;
+            }
+
+            .clearfix {
+                clear: both;
+            }
+
+            #container {
+                width: 100%;
+            }
+
+            /* *~*~*~*~*~*~*~*~*~*
+            Game Box
+            *~*~*~*~*~*~*~*~*~* */
+
+            #gamebox {
+                width: 500px;
+                height: 500px;
+                margin: 200px auto;
+            }
+
+            #gamebox p {
+                margin: 0 auto;
+            }
+
+            /* *~*~*~*~*~*~*~*~*~*
+            Health Box
+            *~*~*~*~*~*~*~*~*~* */
+
+            #healthbox {
+                padding: 8px;
+                float: left;
+            }
+
+            /* *~*~*~*~*~*~*~*~*~*
+            Image Box
+            *~*~*~*~*~*~*~*~*~* */
+
+            #imagebox {
+                float: left;
+                padding: 8px 0 0 40px;
+            }
+
+            #imagebox img {
+                width: 250px;
+            }
+
+            /* *~*~*~*~*~*~*~*~*~*
+            Story Box
+            *~*~*~*~*~*~*~*~*~* */
+
+            #storybox {
+                margin: 10px;
+                padding-top: 25px;
+            }
+
+            /* *~*~*~*~*~*~*~*~*~*
+            Button Box
+            *~*~*~*~*~*~*~*~*~* */
+
+            #buttonbox button {
+                width: 30%;
+                margin: 1.4%;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div id="container">
+            <div id="gamebox">
+                <div id="healthbox">
+                    <p><b>Enemy Health:</b> <span id="enemyhealth">100</span></p>
+                    <p><b>Player Health:</b> <span id="playerhealth">100</span></p>
+                </div>
+                <div id="imagebox">
+                    <img src="raijin.png" />
+                </div>
+                <div class="clearfix"></div>
+                <div id="storybox">
+                    Monster blah blah blah
+                </div>
+                <div id="buttonbox">
+                    <div id="firstButtonDiv">
+                        <button id="firstButton">First</button>
+                        <button id="secondButton">Second</button>
+                        <button id="thirdButton">Third</button>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            var enemyHealth = 100;
+            playerHealth = 100;
+
+            function damageEnemy() {
+                enemyHealth -= parseInt(2);
+                document.getElementById("enemyhealth").innerHTML=enemyHealth;
+            }
+
+            document.getElementById("firstButton").onclick=damageEnemy;
+
+        </script>
+    </body>
+</html>
